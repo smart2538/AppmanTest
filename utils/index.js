@@ -10,6 +10,12 @@ const _ = require('lodash');
  */
 exports.updateStudentScore = (store, { name, scores }) => {
     // code here
+    let newStore = store;
+    scores.map(score => {
+        _.set(newStore[score.key], name, score.value)
+    })
+    console.log(newStore)
+    return newStore
 };
 
 /**
@@ -26,4 +32,5 @@ exports.removeStudentScoreBySubject = (store, { name, subject }) => {
  */
 exports.transformData = store => {
     // code here
+    
 };
